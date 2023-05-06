@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#discussions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 220px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+#discussions h1 {
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #4CAF50;
+  text-align: center;
+}
+
+#discussions p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  text-align: justify;
+  max-width: 800px;
+}
+
+.moreExplain {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 24px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #4CAF50;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.moreExplain {
+  background-color: #3e8e41;
+}
+
+.moreExplain:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #4CAF50;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+span{
+  color: #4CAF50;
+}
+.modal h2 {
+  margin-top: 0;
+}
+
+.more-info-link{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.more-info-link:hover {
+  background-color: #3e8e41;
+}
+.modal-close-btn {
+  position: absolute;
+  right: 10px;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: #4CAF50;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  color: #3e8e41;
+}

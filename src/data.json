@@ -1,0 +1,154 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "topic": "Interpreters and Compilers",
+      "discuss": "Interpreters and compilers are two types of software that are used to translate code written in a high-level programming language into machine code that can be executed by a computer.\nAn interpreter is a program that directly executes the source code of a program. It reads the source code line by line, interprets each line, and immediately executes it. This means that the program can be executed without the need for a separate compilation step. Interpreters are generally slower than compilers because they have to interpret the code at runtime, but they are often used in languages like JavaScript, Python, and Ruby because they offer dynamic typing and faster development cycles.\nA compiler, on the other hand, is a program that translates the source code of a program into an executable form. Compilers perform several stages of translation, including lexical analysis, parsing, optimization, and code generation. Once the source code has been compiled, the resulting machine code can be executed directly by the computer. Because compilers generate efficient machine code, compiled programs can run faster than interpreted programs. Compilers are often used in languages like C and Java because they offer static typing and performance optimizations."
+    },
+    {
+      "id": 2,
+      "topic": "Call stack and memory heap",
+      "discuss": "The call stack is used to keep track of function calls and their associated data, while the memory heap is used to store data that is not associated with a specific function call. Understanding how the call stack and memory heap work is important for writing efficient and bug-free code."
+    },
+    {
+      "id": 3,
+      "topic": "Stack overflow and garbage collection",
+      "discuss": "A stack overflow occurs when the call stack becomes too large and runs out of space. This can happen when a program makes too many nested function calls, leading to the creation of too many stack frames. When this happens, the program may crash or behave unpredictably. To prevent stack overflows, programmers can use techniques like tail recursion or iteration to reduce the number of nested function calls, or increase the size of the stack if possible. Garbage collection is a process used by many programming languages to automatically reclaim memory that is no longer being used by the program. When a program creates objects on the heap, it is responsible for managing the memory associated with those objects. Garbage collection automates this process by periodically scanning the heap to identify objects that are no longer in use and freeing the memory associated with them. This helps prevent memory leaks and other issues caused by manual memory management."
+    },
+    {
+      "id": 4,
+      "topic": "Memory leaks",
+      "discuss": "Memory leaks are a common problem in computer programming that occur when a program allocates memory but fails to release it when it is no longer needed. This can result in a gradual depletion of the available memory, leading to degraded performance or even crashes. Memory leaks can occur for a variety of reasons, such as global variables, event listeners, and setInterval functions."
+    },
+    {
+      "id": 5,
+      "topic": "execution Context",
+      "discuss": "Execution context is a fundamental concept in JavaScript and other programming languages that defines the environment in which a piece of code is executed. An execution context includes all the variables, functions, and other data that are accessible to the code at runtime, as well as the rules and conditions that govern how that code is executed. In JavaScript, there are three types of execution context: global, function, and eval. The global execution context is created when the program starts and includes all the variables and functions that are defined outside of any function. Function execution contexts are created whenever a function is called and include the variables and functions defined within that function, as well as any variables and functions that are accessible from the enclosing scope. Eval execution contexts are created when code is executed using the eval() function and include all the variables and functions that are defined within the evaluated code. Execution context also includes important concepts such as the \"this\" keyword, global object and the scope chain. The \"this\" keyword refers to the object that the code is currently executing within, while the scope chain defines the order in which the JavaScript engine searches for variables and functions within nested scopes. Every time you run a code, it is going to be a part of an execution stack. If we did not write any code, window (global object)=== this keyword, as the browser has created a global execution context for us, and this is the first thing."
+    },
+    {
+      "id": 6,
+      "topic": "Lexical environment and closure",
+      "discuss": "Lexical environment and closure are closely related concepts in programming, particularly in JavaScript. A lexical environment is a set of variables and their values that are accessible to a piece of code at any given time, based on the location of the code in the source file. A lexical environment consists of two parts: the environment record and the outer environment reference. The environment record is a JavaScript object that maps variable names to their values, while the outer environment reference is a reference to the next outer lexical environment, or null if there is no outer environment. When a function is invoked, a new lexical environment is created, which includes the function's parameters and local variables. The function also has access to the variables and functions defined in its outer lexical environment, as determined by the scope chain. Let's think about the lexical environment as a universe that is created every time we create an execution context (what part of the universe is it?!). Lexical scope refers to the available data and variables where the function was defined, and determines our available variables, not where the function is called (dynamic scope). A closure is a function that retains access to its outer lexical environment, even after the outer function has returned. This allows the inner function to access variables and functions from the outer function, even if they are no longer in scope. Closures are created when a function is defined within another function, and the inner function references variables from the outer function. When the inner function is invoked, it creates a new lexical environment, which includes its own parameters and local variables, as well as a reference to the outer lexical environment."
+    },
+    {
+      "id": 7,
+      "topic": "Hoisting",
+      "discuss": "Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their respective scopes by the JavaScript engine during runtime. This means that even if a variable or function is declared later in the code, it can be used before it is actually declared. In the case of variable declarations, hoisting means that the variable is initialized with the value of undefined, rather than throwing an error for using an uninitialized variable. This can lead to unexpected behavior and bugs in code if not carefully managed. In the case of function declarations, hoisting means that the function can be called before it is actually declared in the code. This allows for more flexible code structure and can be useful for creating self-referential functions and other complex programming constructs. It's important to note that only declarations are hoisted, not initializations or assignments. So while the variable or function declaration may be moved to the top of the scope, any assignments or initializations will remain in their original location in the code."
+    },
+    {
+      "id": 8,
+      "topic": "function invocation and argument keyword",
+      "discuss": "Function invocation is the act of calling a function in JavaScript. When a function is invoked, the code inside the function is executed, and any return value is returned to the caller. In JavaScript, functions can be invoked in several ways, including: As a standalone function: In this case, the function is simply called by its name, and any arguments are passed in parentheses after the function name. As a method of an object: In this case, the function is invoked using the dot notation, with the object name preceding the function name. Using the \"apply\" or \"call\" methods: These methods allow a function to be invoked with a specified value for \"this\", as well as an array of arguments. When we invoke the function, we have the \"this\" keyword, and we also get an object called \"arguments\" (which gives us the arguments passed to the function). Keyword arguments are not natively supported in JavaScript, but they can be emulated using an object to represent the arguments. This object can then be passed to the function, and the function can access the arguments using the object's properties."
+    },
+    {
+      "id": 9,
+      "topic": "variable environment and scope chaining",
+      "discuss": "A variable environment is a data structure that stores all of the variables and their values that are accessible to a piece of code at any given time. In JavaScript, each function has its own variable environment, which includes the function's parameters, local variables, and any variables defined in outer lexical environments. Scope chaining is the mechanism by which JavaScript looks for a variable when it is referenced in code. When a variable is referenced in a function, JavaScript first looks for the variable in the function's local variable environment. If the variable is not found there, JavaScript looks for the variable in the next outer lexical environment, continuing up the chain until the variable is found or the global environment is reached. The combination of variable environment and scope chaining allows JavaScript to manage variable scoping and prevent variable name collisions between functions. It also allows for powerful functional constructs like closures, where inner functions can access variables from outer functions."
+    },
+    {
+      "id": 10,
+      "topic": "function scope and block scope",
+      "discuss": "Function scope refers to the scope of a variable when it is defined within a function. When a variable is defined inside a function, it is only accessible within that function and any inner functions that are defined within it. The variable is not accessible outside of the function. Block scope, on the other hand, refers to the scope of a variable when it is defined within a block of code, such as a loop or an if statement. When a variable is defined inside a block, it is only accessible within that block and any nested blocks. The variable is not accessible outside of the block. In ES6, the let and const keywords were introduced, which allow for block-scoped variables in JavaScript. When a variable is defined with let or const inside a block, it is only accessible within that block and any nested blocks. This allows for more fine-grained control over variable scoping and can help to prevent naming collisions and other bugs in code."
+    },
+    {
+      "id": 11,
+      "topic": "IIFE",
+      "discuss": " IIFE stands for Immediately Invoked Function Expression. It is a\nJavaScript function that is executed as soon as it is defined. The\nfunction is wrapped in parentheses, which causes it to be evaluated as an\nexpression, and then immediately invoked with parentheses at the end. An\nIIFE is often used to create a new scope for variables and functions that\nshould not be accessible from the global scope. It is a common pattern for\ncreating modular code and avoiding naming collisions with other code in\nthe global scope"
+    },
+    {
+      "id": 12,
+      "topic": "This keyword",
+      "discuss": " The value of this depends on how a function is invoked. In general, the\nvalue of this is determined by the way a function is called, and there are\nfour main ways that a function can be invoked in JavaScript: Function\ninvocation: When a function is called as a function, without any object\ncontext, the value of this is the global object (or undefined in strict\nmode). Method invocation: When a function is called as a method of an\nobject, the value of this is the object itself. Constructor invocation:\nWhen a function is called with the new keyword, the value of this is a new\nobject created by the constructor. Explicit binding: When a function is\ncalled using call, apply, or bind, the value of this is explicitly set to\nthe object passed as the first argument."
+    },
+    {
+      "id": 13,
+      "topic": "lexical scope and dynamic scope",
+      "discuss": "Lexical scope, also known as static scope, refers to the scope of a\nvariable based on its location in the source code. In other words, the\nscope of a variable is determined by its position within the code's\nlexical hierarchy. This means that variables declared inside a block or a\nfunction are only accessible within that block or function, and not\noutside of it. Dynamic scope, on the other hand, refers to the scope of a\nvariable based on the current execution context or the calling stack. In\ndynamic scope, the value of a variable is determined by the calling\ncontext of the function, rather than by its position in the source code."
+    },
+    {
+      "id": 14,
+      "topic": "call(), apply(), and bind()",
+      "discuss": "In JavaScript, the call(), apply(), and bind() methods are used to set the value of this in a function and to pass arguments to the function. These methods are commonly used in JavaScript for function invocation and are especially useful when working with object-oriented programming patterns.\n\nThe call() method is used to invoke a function and explicitly set the value of this. It takes one or more arguments, where the first argument is the object to set as the value of this and the rest of the arguments are the arguments to pass to the function.\n\nThe apply() method is similar to call(), but takes an array of arguments instead of individual arguments. This can be useful when the number of arguments is unknown or when the arguments are already in an array.\n\nThe bind() method is used to create a new function with a bound this value. It does not invoke the function immediately, but instead returns a new function that can be called later with the specified this value and arguments."
+    },
+    {
+      "id": 15,
+      "topic": "bind() and function currying",
+      "discuss": "In JavaScript, bind() is a method that allows you to create a new function with a specific this value and arguments. Function currying is a technique that involves creating a new function by partially applying the arguments of an existing function.\n\nBy combining bind() and function currying, you can create new functions that are partially applied with arguments and have a specific this value. This can be useful when you need to reuse a function with different arguments and contexts."
+    },
+    {
+      "id": 16,
+      "topic": "value type and refrence type",
+      "discuss": "Value types include primitive data types such as strings, numbers, booleans, null, and undefined. When you assign a value type to a variable, the variable holds a copy of the actual value. So, if you assign a value type to multiple variables or pass it as an argument to a function, each variable or function parameter will hold its own copy of the value. Reference types include objects and arrays. When you assign a reference type to a variable, the variable holds a reference to the actual object or array in memory. So, if you assign a reference type to multiple variables or pass it as an argument to a function, each variable or function parameter will hold a reference to the same object or array."
+    },
+    {
+      "id": 17,
+      "topic": "Type coercion",
+      "discuss": "Type coercion is the process in which JavaScript automatically converts one data type to another data type during runtime. This occurs when operators or functions are applied to values of different types."
+    },
+    {
+      "id": 18,
+      "topic": "Functions",
+      "discuss": "Functions are first class citizens in js. We can assign functions to variables and what's called by Higher Order Functions. Functions can take functions as parameters and can return functions."
+    },
+    {
+      "id": 19,
+      "topic": "closure",
+      "discuss": "Closure is a powerful feature in JavaScript that allows a function to remember and access its lexical scope even when it's executed outside that scope. In other words, a closure is created when a function is defined inside another function and it retains access to the outer function's variables and parameters even after the outer function has returned.\n\nIt is useful for memory as if we have a function which is created many times, we can create it once and make reference to another function, so it is saved for once.\n\nClosures are used in JavaScript for many purposes, such as encapsulation, data privacy, and memoization. They provide a way to create functions with private variables and data that cannot be accessed from outside the function. They also allow for efficient caching of expensive function calls by storing the results of the function in a closure and returning the cached result instead of re-executing the function."
+    },
+    {
+      "id": 20,
+      "topic": "Prototype",
+      "discuss": "Prototype chain.\n\nPrototype inheritance is a key feature of JavaScript that allows objects to inherit properties and methods from other objects, known as their . Every object in JavaScript has a prototype, which is an object that serves as a template for that object. When a property or method is accessed on an object and it is not found on the object itself, JavaScript looks up the prototype chain until it finds the property or method on one of the object's prototypes.\n\nMultipleBy5()\nproto links to prototype\nthis prototype includes proto as it is one of its properties\nOnly Functions have the prototype property"
+    },
+    {
+      "id": 21,
+      "topic": "Factory functions",
+      "discuss": "In JavaScript, a factory function is a function that returns a new object or\nfunction each time it is called. Factory functions are often used as a way\nto create objects with a consistent structure or behavior without the need\nfor explicit class or constructor functions.\nBy using a factory function, we can create multiple objects with the same\nstructure and behavior without the need for a class or constructor\nfunction. This can make our code more flexible and easier to maintain, as\nchanges to the structure or behavior of the objects can be made simply by\nmodifying the factory function."
+    },
+    {
+      "id": 22,
+      "topic": "pure functions",
+      "discuss": "A pure function in JavaScript is a function that always returns the same\noutput given the same input, and has no side effects on the surrounding\nstate of the program. This means that it does not modify any external\nvariables or objects, and does not have any observable interactions with\nthe outside world.."
+    },
+    {
+      "id": 23,
+      "topic": "idempotence",
+      "discuss": "idempotence is a property of a function or operation that can be applied\nmultiple times without changing the result beyond the initial application.\nIn other words, an idempotent function or operation can be safely applied\nmultiple times without causing unintended effects or changing the outcome."
+    },
+    {
+      "id": 24,
+      "topic": "imperative and declarative",
+      "discuss": "In imperative programming, the focus is on how to perform a certain task. The programmer specifies the exact steps the program should take to accomplish the task. This usually involves specifying control structures such as loops and conditional statements, and manipulating variables directly.\n\nIn contrast, declarative programming is focused on what the program should accomplish, without specifying how. The programmer specifies the desired outcome, and the program figures out the details of how to achieve it. This is typically done using higher-level abstractions such as functions, which can be composed together to achieve complex behavior."
+    },
+    {
+      "id": 25,
+      "topic": "partial applications",
+      "discuss": "Partial application is a technique in functional programming where a function with multiple arguments is converted into a function with fewer arguments by fixing some of its arguments in advance. The resulting function can be used later with the remaining arguments."
+    },
+    {
+      "id": 26,
+      "topic": "memoization and caching",
+      "discuss": "Memoization and caching are techniques used in computer science and programming to optimize the performance of programs by reducing the amount of time needed to compute complex calculations or look up data.\n\nMemoization is a technique that involves storing the results of expensive function calls and returning the cached result when the same inputs occur again. This is particularly useful when the function is called frequently with the same arguments, and computing the result is expensive or time-consuming.\n\nCaching is a technique that involves storing frequently accessed data in memory for faster access. This can be useful when accessing data from a slow data source, such as a database or network, or when performing expensive computations that can be reused later."
+    },
+    {
+      "id": 27,
+      "topic": "compose and pipe",
+      "discuss": "In functional programming, both compose and pipe are higher-order functions used to combine multiple functions into a single function.\n\nCompose takes two or more functions as arguments and returns a new function that applies the functions from right to left. The output of the rightmost function becomes the input to the second-to-last function, and so on, until the leftmost function is applied to the input.\n\nPipe works in a similar way to compose, but applies the functions from left to right. The output of the leftmost function becomes the input to the next function in the chain."
+    },
+    {
+      "id": 28,
+      "topic": "composition vs inheritance",
+      "discuss": "Inheritance involves creating a new class that inherits properties and methods from an existing class. The new class can then add or override some of the inherited properties or methods. This is achieved by creating a parent-child relationship between classes, where the child class (subclass) inherits from the parent class (superclass). Inheritance can simplify code by reusing existing code, but it can also make the codebase more complex and harder to maintain over time.\n\nComposition, on the other hand, involves combining simple, independent parts to form more complex objects. Instead of creating a parent-child relationship between classes, composition involves creating objects that contain other objects as properties. Each object is responsible for its own behavior, but can also delegate behavior to the objects it contains. This allows for greater flexibility and reusability of code, as objects can be easily combined and swapped out as needed."
+    },
+    {
+      "id": 27,
+      "topic": "compose and pipe",
+      "discuss": "In functional programming, both compose and pipe are higher-order functions used to combine multiple functions into a single function.\n\nCompose takes two or more functions as arguments and returns a new function that applies the functions from right to left. The output of the rightmost function becomes the input to the second-to-last function, and so on, until the leftmost function is applied to the input.\n\nPipe works in a similar way to compose, but applies the functions from left to right. The output of the leftmost function becomes the input to the next function in the chain."
+    },
+    {
+      "id": 28,
+      "topic": "composition vs inheritance",
+      "discuss": "What it has? vs What it is?\n\nInheritance involves creating a new class that inherits properties and methods from an existing class. The new class can then add or override some of the inherited properties or methods. This is achieved by creating a parent-child relationship between classes, where the child class (subclass) inherits from the parent class (superclass). Inheritance can simplify code by reusing existing code, but it can also make the codebase more complex and harder to maintain over time.\n\nComposition, on the other hand, involves combining simple, independent parts to form more complex objects. Instead of creating a parent-child relationship between classes, composition involves creating objects that contain other objects as properties. Each object is responsible for its own behavior, but can also delegate behavior to the objects it contains. This allows for greater flexibility and reusability of code, as objects can be easily combined and swapped out as needed."
+    }
+  ]
+}
